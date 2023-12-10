@@ -1,12 +1,12 @@
 # Weather App
-This is a web app developed as a final Portfolio project for ALX using HTML, CSS, and Vanilla JavaScript. It is hosted on Netlify and utilizes both SheCodes Weather API and OpenWeatherMap API to fetch weather data. The app allows users to search for the weather conditions of any city in the world and provides current weather conditions, a 5-day forecast, and hourly forecasts. Additionally, the app can detect the user's current position if they allow it.
+Developed as the concluding portfolio project for ALX, this web application employs HTML, CSS, and Vanilla JavaScript. Hosted on Netlify, the app leverages both SheCodes Weather API and OpenWeatherMap API to acquire weather-related information. Users can conveniently explore current weather conditions, a 5-day forecast, and hourly forecasts for any city globally. Additionally, the app offers the option to detect the user's current position, with their consent.
 
 # Features
-- Users can search for weather conditions of any city in the world.
-- The app displays the current weather conditions, including temperature and weather description.
-- The app provides a 5-day forecast for the searched city, including hourly forecasts.
-- The app can detect the user's current position if they allow it.
-- The app fetches weather data using both SheCodes Weather API and OpenWeatherMap API.
+- Users can search for weather conditions in any city globally.
+- The app presents current weather conditions, encompassing temperature and a weather description.
+- A 5-day forecast, along with hourly forecasts, is provided for the searched city.
+- The app has the capability to detect the user's current position, subject to their approval.
+- Weather data is retrieved using both SheCodes Weather API and OpenWeatherMap API.
 
 # Technologies & Tools Used
 - HTML
@@ -22,22 +22,22 @@ To use this app, you can either clone this repository or download the zip file.
 
 To clone the repository, run the following command in your terminal:
 ```bash
-git clone https://github.com/s-shemmee/Weather-App.git
+git clone https://github.com/KofiFloki/Weatherly-App.git
 ```
 
-Once you have cloned the repository, open the `index.html` file in your browser to use the app.
+Once the repository is cloned, open the index.html file in your browser to access the app.
 
-To use the app, simply type the name of the city you want to search for in the search bar and press the Enter key. The app will display the current weather conditions and the 5-day forecast for the searched city.
+To use the app, enter the desired city name in the search bar and press Enter. The app will display the current weather conditions and a 5-day forecast for the searched city.
 
-Alternatively, you can allow the app to detect your current position and display the weather conditions for your location.
+Alternatively, grant permission for the app to detect your current position and display the weather conditions accordingly.
 
-To toggle between Celsius and Fahrenheit temperature units, click the "Convert to Fahrenheit" or "Convert to Celsius" link below the temperature display.
+To switch between Celsius and Fahrenheit temperature units, click the "Convert to Fahrenheit" or "Convert to Celsius" link below the temperature display.
 
 # Demo
-A live demo of the weather app can be found at [LINK TO LIVE DEMO](https://weather-app-shemmee.netlify.app).
+A live demo of the weather app can be found at [LINK TO LIVE DEMO](##Attach Link).
 
 # Credits
-The weather app was created by [s-shemmee](https://github.com/s-shemmee) as a final project for the SheCodes Plus workshop.
+The weather app was created by [Jeremiah Martey](https://github.com/KofiFLoki) and [Sanni Omoba](https://github.com/OmobaVI) as a final project for the ALX Portfolio project.
 
 - The app uses the [SheCodes weather API](https://www.shecodes.io/learn/apis/weather) and [OpenWeatherMap API](https://openweathermap.org) to retrieve weather data.
 - The illustrations used in the app are [3D casual life](https://icons8.com/illustrations/style--3d-casual-life).
