@@ -81,8 +81,8 @@ function showError(error) {
 }
 
 function getWeatherData(lat, lon) {
-  let apiKey = "b03a640e5ef6980o4da35b006t5f2942";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
+  let apiKey = "f31a01d49b3646afb8d84815231212";
+  let apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${lat},${lon}&aqi=no`;
   axios
     .get(apiUrl)
     .then((response) => {
@@ -105,8 +105,8 @@ searchInput.addEventListener("keydown", function (event) {
 });
 
 function searchCity(city) {
-  let apiKey = "b03a640e5ef6980o4da35b006t5f2942";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  let apiKey = "f31a01d49b3646afb8d84815231212";
+  let apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`;
 
   fetch(apiUrl)
     .then((response) => {
@@ -120,11 +120,12 @@ function searchCity(city) {
 // Displaying Current Weather Data
 
 function displayWeather(data) {
-  let city = data.city;
-  let country = data.country;
-  let temp = Math.round(data.temperature.current);
-  let description = data.condition.description;
-  let iconUrl = data.condition.icon_url;
+  let city = data.location.name;
+  let state = data.location.region;
+  let country = data.location.country;
+  let temp = Math.round(data.current.temp_c);
+  let description = data.current.condition.text;
+  let iconUrl = data.current.condition.icon;
 
   let location = document.querySelector(".location");
   location.innerHTML = `${city}, ${country}`;
@@ -138,16 +139,17 @@ function displayWeather(data) {
   let weatherIcon = document.querySelector(".weather-icon");
   weatherIcon.innerHTML = `<img src="${iconUrl}" alt="weather icon">`;
   
-  getHourlyData(data.coordinates.latitude, data.coordinates.longitude);
-  getForecastData(data.coordinates.latitude, data.coordinates.longitude);
+  getHourlyData(data.location.lat, data.location.lon);
+  getForecastData(data.location.lat, data.location.lon);
+  getHistoryData(data.location.lat, data.location.lon);
 
 }
 
 // Hourly Forecast
 
 function getHourlyData(lat, lon) {
-  let api_key = "b0c0cd6e9ac2703bc8d9959f958dda57";
-  let api_url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${api_key}&units=metric`;
+  let apiKey = "f31a01d49b3646afb8d84815231212";
+  let api_url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat},${lon}&days=1&aqi=no&alerts=no`;
   console.log(api_url);
 
   fetch(api_url)
@@ -155,46 +157,47 @@ function getHourlyData(lat, lon) {
       return response.json();
     })
     .then((data) => {
-      displayHourly(data);
+      displayHourly(data.forecast.forecastday[0].hour);
     });
 }
 
 function displayHourly(data) {
   let hourlyContainer = document.querySelector("#hourly-forecast");
-  let hoursToShow = 6;
+  let hoursToShow = 24;
   hourlyContainer.innerHTML = "";
   
-  for (let i = 0; i < hoursToShow; i++) {
-    let hourly = data.list[i];
-    let hourlyTemp = hourly.main.temp;
+  let i = 0;
+  while (i < hoursToShow) {
+    let hourly = data[i];
+    let hourlyTemp = hourly.temp_c;
     let tempCelsius = Math.round(hourlyTemp);
-    let hourlyIcon = hourly.weather[0].icon;
-    let hourlyTime = new Date(hourly.dt * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-
+    let hourlyIcon = hourly.condition.icon;
+    let hourlyTime = new Date(hourly.time_epoch * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    i += 4;
       let hourlyCard = document.createElement("div");
       hourlyCard.classList.add("forecast");
 
       hourlyCard.innerHTML = `
         <h6 class="forecast-time">${hourlyTime}</h6>
-        <img src="https://openweathermap.org/img/wn/${hourlyIcon}.png" alt="weather icon" class="forecast-icon">
+        <img src="${hourlyIcon}" alt="weather icon" class="forecast-icon">
         <h6 class="forecast-temp">${tempCelsius}°</h6>
       `;
       hourlyContainer.appendChild(hourlyCard);
   }
 }
 
-// 5 Day Forecast 
+// 3 Day Forecast 
 
 function getForecastData(lat, lon) {
-  let apiKey = "b03a640e5ef6980o4da35b006t5f2942";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
+  let apiKey = "f31a01d49b3646afb8d84815231212";
+  let apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat},${lon}&days=4&aqi=no&alerts=no`;
 
   fetch(apiUrl)
     .then((response) => {
       return response.json();
     })
     .then((data) => {
-      displayForecast(data.daily);
+      displayForecast(data.forecast.forecastday);
     }); 
 }
 
@@ -204,20 +207,20 @@ function displayForecast(forecastData) {
 
   const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 1; i < 4; i++) {
     const day = forecastData[i];
 
     const forecastCard = document.createElement("div");
     forecastCard.classList.add("day");
 
-    const date = new Date(day.time * 1000); 
+    const date = new Date(day.date_epoch * 1000); 
     const dayOfWeek = daysOfWeek[date.getDay()]; 
 
-    const iconUrl = day.condition.icon_url;
-    const description = day.condition.description;
+    const iconUrl = day.day.condition.icon;
+    const description = day.day.condition.text;
 
-    const minTemp = Math.round(day.temperature.minimum);
-    const maxTemp = Math.round(day.temperature.maximum);
+    const minTemp = Math.round(day.day.mintemp_c);
+    const maxTemp = Math.round(day.day.maxtemp_c);
 
     const forecastContent = `
       <h6 class="day-name">${dayOfWeek}</h6>
@@ -229,6 +232,55 @@ function displayForecast(forecastData) {
     forecastCard.innerHTML = forecastContent;
     forecastContainer.appendChild(forecastCard);
   }
+}
+
+// A day History
+function getHistoryData(lat, lon) {
+  let apiKey = "f31a01d49b3646afb8d84815231212";
+  const today = new Date()
+  const yesterday = new Date(today)
+  yesterday.setDate(today.getDate() - 1)
+  yesterdayFormat = yesterday.toISOString().slice(0, 10);
+  let apiUrl = `https://api.weatherapi.com/v1/history.json?key=${apiKey}&q=${lat},${lon}&&dt=${yesterdayFormat}`;
+
+  fetch(apiUrl)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      displayHistory(data.forecast.forecastday);
+    }); 
+}
+
+function displayHistory(forecastData) {
+  const forecastContainer = document.getElementById("forecast1");
+  forecastContainer.innerHTML = "";
+
+  const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  const day = forecastData[0];
+
+  const forecastCard = document.createElement("div");
+  forecastCard.classList.add("day");
+
+  const date = new Date(day.date_epoch * 1000); 
+  const dayOfWeek = daysOfWeek[date.getDay()]; 
+
+  const iconUrl = day.day.condition.icon;
+  const description = day.day.condition.text;
+
+  const minTemp = Math.round(day.day.mintemp_c);
+  const maxTemp = Math.round(day.day.maxtemp_c);
+
+  const forecastContent = `
+    <h6 class="day-name">${dayOfWeek}</h6>
+    <img src="${iconUrl}">
+    <h6 class="day-weather">${description}</h6>
+    <h6 class="day-temp">${minTemp}° / <strong>${maxTemp}°</stronng></h6>
+    `;
+
+  forecastCard.innerHTML = forecastContent;
+  forecastContainer.appendChild(forecastCard);
 }
 
 function showPosition(position) {
