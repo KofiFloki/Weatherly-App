@@ -37,12 +37,12 @@ function getSportsData(lat, lon) {
       const sportsCard = document.createElement("div");
       sportsCard.classList.add("sport");
   
-      const stadium = sport.stadium;
+      const tournament = sport.tournament;
       const start = sport.start;
       const match = sport.match;
   
       const sportsContent = `
-        <h1 class="sport-stadium">${stadium}</h1>
+        <h1 class="sport-stadium">${tournament}</h1>
         <h6 class="sport-date">${start}</h6>
         <h6 class="sport-match">${match}</h6>
         `;
