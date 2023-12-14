@@ -47,6 +47,7 @@ function displayWeather(data) {
     getHourlyData(data.location.lat, data.location.lon);
     getForecastData(data.location.lat, data.location.lon);
     getHistoryData(data.location.lat, data.location.lon);
+    getSportsData(data.location.lat, data.location.lon);
   
   }
   
@@ -72,6 +73,38 @@ function displayWeather(data) {
           <h6 class="forecast-temp">${tempCelsius}°</h6>
         `;
         hourlyContainer.appendChild(hourlyCard);
+    }
+  }
+function displayForecast(forecastData) {
+    const forecastContainer = document.getElementById("forecast");
+    forecastContainer.innerHTML = "";
+  
+    const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  
+    for (let i = 1; i < 4; i++) {
+      const day = forecastData[i];
+  
+      const forecastCard = document.createElement("div");
+      forecastCard.classList.add("day");
+  
+      const date = new Date(day.date_epoch * 1000); 
+      const dayOfWeek = daysOfWeek[date.getDay()]; 
+  
+      const iconUrl = day.day.condition.icon;
+      const description = day.day.condition.text;
+  
+      const minTemp = Math.round(day.day.mintemp_c);
+      const maxTemp = Math.round(day.day.maxtemp_c);
+  
+      const forecastContent = `
+        <h6 class="day-name">${dayOfWeek}</h6>
+        <img src="${iconUrl}">
+        <h6 class="day-weather">${description}</h6>
+        <h6 class="day-temp">${minTemp}° / <strong>${maxTemp}°</stronng></h6>
+        `;
+  
+      forecastCard.innerHTML = forecastContent;
+      forecastContainer.appendChild(forecastCard);
     }
   }
 
