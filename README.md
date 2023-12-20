@@ -1,21 +1,21 @@
 # Weather App
-Developed as the concluding portfolio project for ALX, this web application employs HTML, CSS, and Vanilla JavaScript. Hosted on Netlify, the app leverages both SheCodes Weather API and OpenWeatherMap API to acquire weather-related information. Users can conveniently explore current weather conditions, a 5-day forecast, and hourly forecasts for any city globally. Additionally, the app offers the option to detect the user's current position, with their consent.
+Developed as the concluding portfolio project for ALX, this web application employs HTML, CSS, and Vanilla JavaScript. Hosted on Github pages, the app leverages WaetherAPI API to acquire weather-related information. Users can conveniently explore current weather conditions, a 3-day forecast, a day's history and hourly forecasts for any city globally. Additionally, the app offers the option to detect the user's current position, with their consent. The app also provides upcoming major football competition in the specified location.
 
 # Features
 - Users can search for weather conditions in any city globally.
 - The app presents current weather conditions, encompassing temperature and a weather description.
 - A 3-day forecast, along with hourly forecasts, is provided for the searched city.
 - The app has the capability to detect the user's current position, subject to their approval.
-- Weather data is retrieved using both SheCodes Weather API and OpenWeatherMap API.
+- Weather data is retrieved using WaetherAPI API.
+- Upcoming Football matches taking place in the searched city.
 
 # Technologies & Tools Used
 - HTML
 - CSS
 - Vanilla JavaScript
 - VS Code
-- SheCodes Weather API
-- OpenWeatherMap API
-- Netlify
+- WeatherAPI API
+- Github Pages
 
 # Installation and Usage
 To use this app, you can either clone this repository or download the zip file.
@@ -39,7 +39,8 @@ A live demo of the weather app can be found at [LINK TO LIVE DEMO](##Attach Link
 # Credits
 The weather app was created by [Jeremiah Martey](https://github.com/KofiFLoki) and [Sanni Omoba](https://github.com/OmobaVI) as a final project for the ALX Portfolio project.
 
-- The app uses the [SheCodes weather API](https://www.shecodes.io/learn/apis/weather) and [OpenWeatherMap API](https://openweathermap.org) to retrieve weather data.
+- The app uses the [WeatherAPI API](https://www.weatherapi.com/) to retrieve weather data and upcoming football competition data.
+
 - The illustrations used in the app are [3D casual life](https://icons8.com/illustrations/style--3d-casual-life).
 
 # License
