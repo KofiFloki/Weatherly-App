@@ -7,6 +7,7 @@ Developed as the concluding portfolio project for ALX, this web application empl
 - A 3-day forecast, along with hourly forecasts, is provided for the searched city.
 - The app has the capability to detect the user's current position, subject to their approval.
 - Weather data is retrieved using WaetherAPI API.
+- Can switch temperature units between Celsius and Fahrenheit.
 - Upcoming Football matches taking place in the searched city.
 
 # Technologies & Tools Used
