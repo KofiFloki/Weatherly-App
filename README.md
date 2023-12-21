@@ -35,7 +35,7 @@ Alternatively, grant permission for the app to detect your current position and 
 To switch between Celsius and Fahrenheit temperature units, click the "Convert to Fahrenheit" or "Convert to Celsius" link below the temperature display.
 
 # Demo
-A live demo of the weather app can be found at [LINK TO LIVE DEMO](##Attach Link).
+A live demo of the weather app can be found at [LINK TO LIVE DEMO](https://watch.screencastify.com/v/5BYupNIFFZghuGoQA5f5).
 
 # Credits
 The weather app was created by [Jeremiah Martey](https://github.com/KofiFLoki) and [Sanni Omoba](https://github.com/OmobaVI) as a final project for the ALX Portfolio project.
