@@ -49,4 +49,3 @@ function getSportsData(lat, lon) {
       sportsContainer.appendChild(sportsCard);
     }
   }
-  

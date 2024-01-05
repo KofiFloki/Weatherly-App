@@ -47,8 +47,21 @@ function displayWeather(data) {
     getHourlyData(data.location.lat, data.location.lon);
     getForecastData(data.location.lat, data.location.lon);
     getHistoryData(data.location.lat, data.location.lon);
-    getSportsData(data.location.lat, data.location.lon);
-  
+
+    const forecastTypeSelect = document.getElementById('forecast-type');
+
+    forecastTypeSelect.addEventListener('change', () => {
+      const selectedValue = forecastTypeSelect.value;
+
+      // Check the selected value and execute the respective functions
+      if (selectedValue === 'football') {
+        // Execute only when 'Upcoming Football' is selected
+        getSportsData(data.location.lat, data.location.lon);
+      } else if (selectedValue === 'events') {
+        // Execute only when 'Upcoming Events' is selected
+        getEventsData(data.location.lat, data.location.lon);
+      }
+    });
   }
   
   function displayHourly(data) {

@@ -10,7 +10,7 @@ body {
   font-family: "Poppins", sans-serif;
   line-height: normal;
   background-color: #1C9CF6;
-	height: 100vh;
+	height: 100%;
 }
 
 .header {
@@ -25,6 +25,7 @@ body {
 }
 
 .container {
+  display: flex;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -32,8 +33,8 @@ body {
   border-radius: 15px;
   background-color: #91cbf5;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  width: 1100px;
-  height: 500px;
+  width: 80%;
+  height: 78%;
   overflow: hidden;
   background-size: cover;
   background-position: center;
@@ -41,10 +42,10 @@ body {
 
 .search-bar {
   position: absolute;
-  top: 30px;
-  left: 30px;
-  width: 480px;
-  height: 40px;
+  top: 3%;
+  left: 3%;
+  width: 44%;
+  height: 10%;
   background-color: white;
   border-radius: 15px;
   display: flex;
@@ -63,9 +64,9 @@ body {
 #search-input {
   border: none;
   outline: none;
-  font-size: 16px;
+  font-size: 1em;
   width: 100%;
-  padding-right: 30px;
+  padding-right: 3%;
 }
 
 #search-input::placeholder {
@@ -74,14 +75,14 @@ body {
 
 #search-input:focus {
   outline: none;
-  box-shadow: 0px 0px 5px #d6eaf8;
+  box-shadow: 0px 0px 1em #d6eaf8;
 }
 
 .fa-magnifying-glass {
-  font-size: 16px;
+  font-size: 1em;
   color: #6f6b6b;
   position: absolute;
-  right: 15px;
+  right: 3%;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
@@ -92,16 +93,16 @@ body {
 
 .city-weather {
   position: absolute;
-  top: 90px;
-  left: 30px;
+  top: 18%;
+  left: 3%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 480px;
-  height: 180px;
+  width: 44%;
+  height: 37%;
   background-color: #fff;
-  border-radius: 15px;
-  padding: 20px;
+  border-radius: 3%;
+  padding: 2%;
   color: #000000;
 }
 
@@ -113,40 +114,37 @@ body {
 }
 
 .location {
-  font-size: 25px;
-  font-weight: 700;
-  margin-top: 10px;
+  font-size: 2em;
+  margin-top: 3%;
 }
 
 .time {
   text-align: right;
-  font-size: 12px;
-  font-weight: 300;
-  margin-top: 5px;
+  font-size: 1em;
+  margin-top: 2%;
 }
 
 .date {
   text-align: left;
-  font-size: 12px;
-  font-weight: 500;
-  margin-top: 5px;
+  font-size: 1em;
+  margin-top: 2%;
   color: #6f6b6b;
   font-style: italic;
 }
 
 .temperature {
-  font-size: 40px;
+  font-size: 3rem;
   font-weight: 500;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 3%;
 }
 .temp-unit {
-  font-size: 10px;
+  font-size: 1em;
   color: #1C9CF6;
   font-style: italic;
   font-weight: 600;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 3%;
 }
 
 .temp-unit a {
@@ -169,12 +167,12 @@ body {
 }
 
 .weather-icon img {
-  width: 100px;
-  margin-bottom: 10px;
+  width: 6em;
+  margin-bottom: 3%;
 }
 
 .weather-type {
-  font-size: 16px;
+  font-size: 1em;
   font-weight: 500;
   text-align: center;
   text-transform: capitalize;
@@ -182,13 +180,13 @@ body {
 
 .today-forecasts {
   position: absolute;
-  bottom: 30px;
-  left: 30px;
-  width: 480px;
-  height: 180px;
+  bottom: 3%;
+  left: 3%;
+  width: 44%;
+  height: 37%;
   background-color: #fff;
   border-radius: 15px;
-  padding: 20px;
+  padding: 2%;
   color: #000000;
 }
 
@@ -202,7 +200,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
+  padding: 3%;
   text-align: center;
 }
 
@@ -234,12 +232,12 @@ body {
   position: static;
   bottom: 30px;
   right: 30px;
-  width: 260px;
-  height: 440px;
+  width: 24%;
+  height: 89%;
   background-color: #fff;
   border-radius: 15px;
-  margin-left: 530px;
-  margin-top: 28px;
+  margin-left: 48%;
+  margin-top: 2.5%;
   padding: 10px;
   color: #000000;
 }
@@ -248,8 +246,8 @@ body {
   position: absolute;
   bottom: 30px;
   right: 30px;
-  width: 260px;
-  height: 440px;
+  width: 24%;
+  height: 89%;
   background-color: #fff;
   border-radius: 15px;
   padding: 10px;
@@ -295,11 +293,11 @@ body {
 }
 
 .prev {
-  left: 540px;
+  left: 49%;
 }
 
 .next {
-  right: 320px;
+  right: 30%;
 }
 
 .activity p {
@@ -333,6 +331,10 @@ body {
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
   margin: 8px;
+}
+
+#forecast-type {
+  color: Blue;
 }
 
 .sport {
@@ -377,6 +379,45 @@ body {
   text-transform: capitalize;
 }
 
+.event {
+  display: block;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  margin: 8px;
+}
+
+.event:last-child {
+  border-bottom: none;
+}
+
+.event-name {
+  font-weight: 700;
+  font-size: 12px;
+  color: red;
+  text-transform: capitalize;
+}
+
+.event-date {
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: capitalize;
+}
+
+.event-venue {
+  font-weight: 700;
+  font-size: 14px;
+  color: blue;
+  text-transform: capitalize;
+}
+
+.event-place {
+  font-weight: 700;
+  font-size: 14px;
+  color: blue;
+  text-transform: capitalize;
+}
+
 .day img {
   height: 35px;
 }
@@ -393,7 +434,7 @@ body {
 }
 
 .credit {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
