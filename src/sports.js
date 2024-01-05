@@ -29,7 +29,6 @@ function getSportsData(lat, lon) {
   
       // Check if sport or necessary properties are undefined
       if (!sport || !sport.stadium || !sport.start || !sport.match) {
-        // Handle missing or undefined values here, e.g., skip this iteration
         continue; // Skip this iteration if necessary data is missing
       }
   
@@ -50,4 +49,3 @@ function getSportsData(lat, lon) {
       sportsContainer.appendChild(sportsCard);
     }
   }
-  

@@ -1,14 +1,12 @@
 # Weather App
-Developed as the concluding portfolio project for ALX, this web application employs HTML, CSS, and Vanilla JavaScript. Hosted on Github pages, the app leverages WaetherAPI API to acquire weather-related information. Users can conveniently explore current weather conditions, a 3-day forecast, a day's history and hourly forecasts for any city globally. Additionally, the app offers the option to detect the user's current position, with their consent. The app also provides upcoming major football competition in the specified location.
+Developed as the concluding portfolio project for ALX, this web application employs HTML, CSS, and Vanilla JavaScript. Hosted on Github pages, the app leverages WeatherAPI API to acquire weather-related information. Users can conveniently explore current weather conditions, a 2-day forecast, a day's history and hourly forecasts for any city globally. Additionally, the app offers the option to detect the user's current position, with their consent. The app also provides upcoming major football competition and general events in the specified location.
 
 # Features
 - Users can search for weather conditions in any city globally.
 - The app presents current weather conditions, encompassing temperature and a weather description.
 - A 3-day forecast, along with hourly forecasts, is provided for the searched city.
 - The app has the capability to detect the user's current position, subject to their approval.
-- Weather data is retrieved using WaetherAPI API.
-- Can switch temperature units between Celsius and Fahrenheit.
-- Upcoming Football matches taking place in the searched city.
+- Weather data is retrieved using both SheCodes Weather API and OpenWeatherMap API.
 
 # Technologies & Tools Used
 - HTML
