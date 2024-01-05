@@ -55,7 +55,12 @@
       </div>
 
       <div class="sport-forecasts">
-        <h6>Upcoming Football:</h6>
+        <label for="forecast-type"><h6>Select Forecast Type:</h6></label>
+        <select id="forecast-type">
+          <option value="select">Please Select</option>
+          <option value="football">Upcoming Football</option>
+          <option value="events">Upcoming Events</option>
+        </select>
         <div class="days" id="forecast2"></div>
       </div>
       <div class="week-forecasts">
@@ -143,6 +148,7 @@
     <script src="src/api.js"></script>
     <script src="src/date-time.js"></script>
     <script src="src/sports.js"></script>
+    <script src="src/events.js"></script>
     
   </body>
 </html>
