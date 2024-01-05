@@ -9,6 +9,7 @@ Developed as the concluding portfolio project for ALX, this web application empl
 - Weather data is retrieved using WaetherAPI API.
 - Can switch temperature units between Celsius and Fahrenheit.
 - Upcoming Football matches taking place in the searched city.
+- Upcoming General Events in the searched city. If no events then it displays events in the US or Canada.
 
 # Technologies & Tools Used
 - HTML
