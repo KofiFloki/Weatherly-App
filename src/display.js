@@ -99,8 +99,10 @@ function displayForecast(forecastData) {
   
       const forecastCard = document.createElement("div");
       forecastCard.classList.add("day");
-  
-      const date = new Date(day.date_epoch * 1000); 
+      if (!day || !day.date_epoch) {
+        continue; // Skip this iteration if necessary data is missing
+      }
+      const date = new Date(day.date_epoch * 1000);
       const dayOfWeek = daysOfWeek[date.getDay()]; 
   
       const iconUrl = day.day.condition.icon;
