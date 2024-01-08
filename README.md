@@ -6,7 +6,7 @@ Developed as the concluding portfolio project for ALX, this web application empl
 - The app presents current weather conditions, encompassing temperature and a weather description.
 - A 2-day forecast, along with hourly forecasts, is provided for the searched city.
 - The app has the capability to detect the user's current position, subject to their approval.
-- Weather data is retrieved using both SheCodes Weather API and OpenWeatherMap API.
+- Weather data is retrieved using both Weather API api.
 
 # Technologies & Tools Used
 - HTML
