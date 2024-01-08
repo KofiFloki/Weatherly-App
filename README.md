@@ -29,7 +29,7 @@ git clone https://github.com/KofiFloki/Weatherly-App.git
 
 Once the repository is cloned, open the index.html file in your browser to access the app.
 
-To use the app, enter the desired city name in the search bar and press Enter. The app will display the current weather conditions and a 5-day forecast for the searched city.
+To use the app, enter the desired city name in the search bar and press Enter. The app will display the current weather conditions and a 2-day forecast for the searched city.
 
 Alternatively, grant permission for the app to detect your current position and display the weather conditions accordingly.
 
