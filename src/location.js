@@ -28,12 +28,17 @@ function getLocation() {
   // If The User Use the Search Bar
   
   let searchInput = document.querySelector("#search-input");
+  let searchButton = document.querySelector(".fa-magnifying-glass");
   searchInput.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
       event.preventDefault();
       let city = searchInput.value;
       searchCity(city);
     }
+  });
+  searchButton.addEventListener("click", function () {
+    let city = searchInput.value;
+    searchCity(city);
   });
   
   function searchCity(city) {
