@@ -259,7 +259,7 @@ body {
 .sport-forecasts p {
   font-size: 12px;
   font-weight: 600;
-  color: #f41212;
+  color: #1C9CF6;
   text-align: center;
   font-style: italic;
   margin: 10px 5px 0;
@@ -336,7 +336,7 @@ body {
 }
 
 #forecast-type {
-  color: Blue;
+  color: #1C9CF6;
 }
 
 .sport {
