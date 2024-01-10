@@ -33,3 +33,4 @@ displaySlide();
 setInterval(() => {
   nextBtn.click();
 }, 5000);
+
